@@ -1,0 +1,1309 @@
+1. How to compare JSON have same properties without order ?
+a) var obj1 = {name:"person1",age:5};
+b) var obj2 = {age:5, name:"person1"};
+
+
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+var a = obj1.name && obj2.age;
+var b = obj2.name && obj1.age;
+var compObj = (a === b);
+if(compObj){
+    console.log("Comparatively both objects are same.")
+}else{
+    console.log("Both objects are different.")
+}
+
+OUTPUT:
+Comparatively both objects are same.
+
+
+2. Use the rest countries API Url--> https://restcountries.com/v3.1/all and  display all the country flags in console?
+
+var  request=new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all");
+request.send();
+request.onload=function (){
+    let countryData=JSON.parse(request.responseText);
+   for (let index=0; index<countryData.length;index++){
+        console.log(countryData[index].flags);  
+         
+ }  
+};
+
+OUTPUT:
+{png: 'https://flagcdn.com/w320/de.png', svg: 'https://flagcdn.com/de.svg'}png: "https://flagcdn.com/w320/de.png"svg: "https://flagcdn.com/de.svg"[[Prototype]]: Object
+{png: 'https://flagcdn.com/w320/ma.png', svg: 'https://flagcdn.com/ma.svg'}
+{png: 'https://flagcdn.com/w320/be.png', svg: 'https://flagcdn.com/be.svg'}
+{png: 'https://flagcdn.com/w320/ck.png', svg: 'https://flagcdn.com/ck.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ec.png', svg: 'https://flagcdn.com/ec.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/kn.png', svg: 'https://flagcdn.com/kn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/rw.png', svg: 'https://flagcdn.com/rw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gy.png', svg: 'https://flagcdn.com/gy.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mp.png', svg: 'https://flagcdn.com/mp.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bw.png', svg: 'https://flagcdn.com/bw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bv.png', svg: 'https://flagcdn.com/bv.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cn.png', svg: 'https://flagcdn.com/cn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gd.png', svg: 'https://flagcdn.com/gd.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sn.png', svg: 'https://flagcdn.com/sn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gu.png', svg: 'https://flagcdn.com/gu.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cg.png', svg: 'https://flagcdn.com/cg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/th.png', svg: 'https://flagcdn.com/th.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/jo.png', svg: 'https://flagcdn.com/jo.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/co.png', svg: 'https://flagcdn.com/co.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pn.png', svg: 'https://flagcdn.com/pn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/no.png', svg: 'https://flagcdn.com/no.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/km.png', svg: 'https://flagcdn.com/km.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tf.png', svg: 'https://flagcdn.com/tf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cv.png', svg: 'https://flagcdn.com/cv.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cy.png', svg: 'https://flagcdn.com/cy.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ki.png', svg: 'https://flagcdn.com/ki.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cf.png', svg: 'https://flagcdn.com/cf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bq.png', svg: 'https://flagcdn.com/bq.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pr.png', svg: 'https://flagcdn.com/pr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cc.png', svg: 'https://flagcdn.com/cc.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ps.png', svg: 'https://flagcdn.com/ps.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tm.png', svg: 'https://flagcdn.com/tm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/io.png', svg: 'https://flagcdn.com/io.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/qa.png', svg: 'https://flagcdn.com/qa.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gl.png', svg: 'https://flagcdn.com/gl.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ro.png', svg: 'https://flagcdn.com/ro.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sh.png', svg: 'https://flagcdn.com/sh.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/nu.png', svg: 'https://flagcdn.com/nu.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/in.png', svg: 'https://flagcdn.com/in.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/re.png', svg: 'https://flagcdn.com/re.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/uz.png', svg: 'https://flagcdn.com/uz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/am.png', svg: 'https://flagcdn.com/am.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/kw.png', svg: 'https://flagcdn.com/kw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sx.png', svg: 'https://flagcdn.com/sx.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bg.png', svg: 'https://flagcdn.com/bg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/il.png', svg: 'https://flagcdn.com/il.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/uy.png', svg: 'https://flagcdn.com/uy.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/vu.png', svg: 'https://flagcdn.com/vu.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/vn.png', svg: 'https://flagcdn.com/vn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/as.png', svg: 'https://flagcdn.com/as.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bf.png', svg: 'https://flagcdn.com/bf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pa.png', svg: 'https://flagcdn.com/pa.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gf.png', svg: 'https://flagcdn.com/gf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/iq.png', svg: 'https://flagcdn.com/iq.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tw.png', svg: 'https://flagcdn.com/tw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ci.png', svg: 'https://flagcdn.com/ci.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/lk.png', svg: 'https://flagcdn.com/lk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/md.png', svg: 'https://flagcdn.com/md.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gb.png', svg: 'https://flagcdn.com/gb.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gr.png', svg: 'https://flagcdn.com/gr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/st.png', svg: 'https://flagcdn.com/st.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ml.png', svg: 'https://flagcdn.com/ml.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/za.png', svg: 'https://flagcdn.com/za.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/is.png', svg: 'https://flagcdn.com/is.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/kr.png', svg: 'https://flagcdn.com/kr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cl.png', svg: 'https://flagcdn.com/cl.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mu.png', svg: 'https://flagcdn.com/mu.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/xk.png', svg: 'https://flagcdn.com/xk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/si.png', svg: 'https://flagcdn.com/si.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cz.png', svg: 'https://flagcdn.com/cz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sm.png', svg: 'https://flagcdn.com/sm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/by.png', svg: 'https://flagcdn.com/by.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ge.png', svg: 'https://flagcdn.com/ge.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ch.png', svg: 'https://flagcdn.com/ch.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cu.png', svg: 'https://flagcdn.com/cu.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/nf.png', svg: 'https://flagcdn.com/nf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cd.png', svg: 'https://flagcdn.com/cd.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mf.png', svg: 'https://flagcdn.com/mf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/se.png', svg: 'https://flagcdn.com/se.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/hu.png', svg: 'https://flagcdn.com/hu.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/aw.png', svg: 'https://flagcdn.com/aw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ae.png', svg: 'https://flagcdn.com/ae.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/me.png', svg: 'https://flagcdn.com/me.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/kp.png', svg: 'https://flagcdn.com/kp.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tj.png', svg: 'https://flagcdn.com/tj.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ly.png', svg: 'https://flagcdn.com/ly.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ye.png', svg: 'https://flagcdn.com/ye.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/nl.png', svg: 'https://flagcdn.com/nl.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/hm.png', svg: 'https://flagcdn.com/hm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/nc.png', svg: 'https://flagcdn.com/nc.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/kz.png', svg: 'https://flagcdn.com/kz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/vg.png', svg: 'https://flagcdn.com/vg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/lb.png', svg: 'https://flagcdn.com/lb.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ng.png', svg: 'https://flagcdn.com/ng.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ag.png', svg: 'https://flagcdn.com/ag.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pl.png', svg: 'https://flagcdn.com/pl.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ba.png', svg: 'https://flagcdn.com/ba.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/au.png', svg: 'https://flagcdn.com/au.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/dz.png', svg: 'https://flagcdn.com/dz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mg.png', svg: 'https://flagcdn.com/mg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tt.png', svg: 'https://flagcdn.com/tt.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sr.png', svg: 'https://flagcdn.com/sr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/np.png', svg: 'https://flagcdn.com/np.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/id.png', svg: 'https://flagcdn.com/id.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/az.png', svg: 'https://flagcdn.com/az.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/es.png', svg: 'https://flagcdn.com/es.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sv.png', svg: 'https://flagcdn.com/sv.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/hk.png', svg: 'https://flagcdn.com/hk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tk.png', svg: 'https://flagcdn.com/tk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mh.png', svg: 'https://flagcdn.com/mh.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ru.png', svg: 'https://flagcdn.com/ru.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/lc.png', svg: 'https://flagcdn.com/lc.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tv.png', svg: 'https://flagcdn.com/tv.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gq.png', svg: 'https://flagcdn.com/gq.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/my.png', svg: 'https://flagcdn.com/my.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mw.png', svg: 'https://flagcdn.com/mw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sc.png', svg: 'https://flagcdn.com/sc.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mt.png', svg: 'https://flagcdn.com/mt.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/dm.png', svg: 'https://flagcdn.com/dm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/om.png', svg: 'https://flagcdn.com/om.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ao.png', svg: 'https://flagcdn.com/ao.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pt.png', svg: 'https://flagcdn.com/pt.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cm.png', svg: 'https://flagcdn.com/cm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ee.png', svg: 'https://flagcdn.com/ee.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/er.png', svg: 'https://flagcdn.com/er.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mr.png', svg: 'https://flagcdn.com/mr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ms.png', svg: 'https://flagcdn.com/ms.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ca.png', svg: 'https://flagcdn.com/ca.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/lu.png', svg: 'https://flagcdn.com/lu.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/al.png', svg: 'https://flagcdn.com/al.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pm.png', svg: 'https://flagcdn.com/pm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/yt.png', svg: 'https://flagcdn.com/yt.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/fj.png', svg: 'https://flagcdn.com/fj.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sl.png', svg: 'https://flagcdn.com/sl.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tc.png', svg: 'https://flagcdn.com/tc.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cw.png', svg: 'https://flagcdn.com/cw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ua.png', svg: 'https://flagcdn.com/ua.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mk.png', svg: 'https://flagcdn.com/mk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ad.png', svg: 'https://flagcdn.com/ad.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/na.png', svg: 'https://flagcdn.com/na.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ws.png', svg: 'https://flagcdn.com/ws.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sy.png', svg: 'https://flagcdn.com/sy.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ar.png', svg: 'https://flagcdn.com/ar.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/eh.png', svg: 'https://flagcdn.com/eh.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mz.png', svg: 'https://flagcdn.com/mz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gn.png', svg: 'https://flagcdn.com/gn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tn.png', svg: 'https://flagcdn.com/tn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/fk.png', svg: 'https://flagcdn.com/fk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ls.png', svg: 'https://flagcdn.com/ls.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/hr.png', svg: 'https://flagcdn.com/hr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/lr.png', svg: 'https://flagcdn.com/lr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pg.png', svg: 'https://flagcdn.com/pg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/fi.png', svg: 'https://flagcdn.com/fi.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/aq.png', svg: 'https://flagcdn.com/aq.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bi.png', svg: 'https://flagcdn.com/bi.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bo.png', svg: 'https://flagcdn.com/bo.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tg.png', svg: 'https://flagcdn.com/tg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bb.png', svg: 'https://flagcdn.com/bb.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gi.png', svg: 'https://flagcdn.com/gi.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/et.png', svg: 'https://flagcdn.com/et.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/td.png', svg: 'https://flagcdn.com/td.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gm.png', svg: 'https://flagcdn.com/gm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/nz.png', svg: 'https://flagcdn.com/nz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/um.png', svg: 'https://flagcdn.com/um.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tl.png', svg: 'https://flagcdn.com/tl.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tr.png', svg: 'https://flagcdn.com/tr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/kh.png', svg: 'https://flagcdn.com/kh.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/lt.png', svg: 'https://flagcdn.com/lt.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sd.png', svg: 'https://flagcdn.com/sd.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ai.png', svg: 'https://flagcdn.com/ai.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/it.png', svg: 'https://flagcdn.com/it.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mv.png', svg: 'https://flagcdn.com/mv.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pf.png', svg: 'https://flagcdn.com/pf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/at.png', svg: 'https://flagcdn.com/at.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bz.png', svg: 'https://flagcdn.com/bz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/kg.png', svg: 'https://flagcdn.com/kg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/la.png', svg: 'https://flagcdn.com/la.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/do.png', svg: 'https://flagcdn.com/do.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/hn.png', svg: 'https://flagcdn.com/hn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sz.png', svg: 'https://flagcdn.com/sz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gw.png', svg: 'https://flagcdn.com/gw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ne.png', svg: 'https://flagcdn.com/ne.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pe.png', svg: 'https://flagcdn.com/pe.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bh.png', svg: 'https://flagcdn.com/bh.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bl.png', svg: 'https://flagcdn.com/bl.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bn.png', svg: 'https://flagcdn.com/bn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ky.png', svg: 'https://flagcdn.com/ky.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/py.png', svg: 'https://flagcdn.com/py.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bj.png', svg: 'https://flagcdn.com/bj.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ir.png', svg: 'https://flagcdn.com/ir.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mo.png', svg: 'https://flagcdn.com/mo.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mx.png', svg: 'https://flagcdn.com/mx.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/je.png', svg: 'https://flagcdn.com/je.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/so.png', svg: 'https://flagcdn.com/so.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/lv.png', svg: 'https://flagcdn.com/lv.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/tz.png', svg: 'https://flagcdn.com/tz.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ve.png', svg: 'https://flagcdn.com/ve.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mn.png', svg: 'https://flagcdn.com/mn.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cr.png', svg: 'https://flagcdn.com/cr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/to.png', svg: 'https://flagcdn.com/to.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/br.png', svg: 'https://flagcdn.com/br.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/zw.png', svg: 'https://flagcdn.com/zw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bt.png', svg: 'https://flagcdn.com/bt.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ke.png', svg: 'https://flagcdn.com/ke.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/vc.png', svg: 'https://flagcdn.com/vc.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ax.png', svg: 'https://flagcdn.com/ax.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/im.png', svg: 'https://flagcdn.com/im.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ie.png', svg: 'https://flagcdn.com/ie.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ht.png', svg: 'https://flagcdn.com/ht.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mm.png', svg: 'https://flagcdn.com/mm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gp.png', svg: 'https://flagcdn.com/gp.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/jm.png', svg: 'https://flagcdn.com/jm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bs.png', svg: 'https://flagcdn.com/bs.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/fr.png', svg: 'https://flagcdn.com/fr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sg.png', svg: 'https://flagcdn.com/sg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/wf.png', svg: 'https://flagcdn.com/wf.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/fo.png', svg: 'https://flagcdn.com/fo.svg'}
+country.js:9 {png: 'https://upload.wikimedia.org/wikipedia/commons/thu…the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png', svg: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sj.png', svg: 'https://flagcdn.com/sj.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ss.png', svg: 'https://flagcdn.com/ss.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/rs.png', svg: 'https://flagcdn.com/rs.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/va.png', svg: 'https://flagcdn.com/va.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ni.png', svg: 'https://flagcdn.com/ni.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ug.png', svg: 'https://flagcdn.com/ug.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/us.png', svg: 'https://flagcdn.com/us.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/eg.png', svg: 'https://flagcdn.com/eg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mq.png', svg: 'https://flagcdn.com/mq.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ph.png', svg: 'https://flagcdn.com/ph.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gs.png', svg: 'https://flagcdn.com/gs.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/zm.png', svg: 'https://flagcdn.com/zm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sb.png', svg: 'https://flagcdn.com/sb.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gh.png', svg: 'https://flagcdn.com/gh.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/ga.png', svg: 'https://flagcdn.com/ga.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pk.png', svg: 'https://flagcdn.com/pk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sa.png', svg: 'https://flagcdn.com/sa.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gg.png', svg: 'https://flagcdn.com/gg.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/gt.png', svg: 'https://flagcdn.com/gt.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/nr.png', svg: 'https://flagcdn.com/nr.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/mc.png', svg: 'https://flagcdn.com/mc.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/cx.png', svg: 'https://flagcdn.com/cx.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/jp.png', svg: 'https://flagcdn.com/jp.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/li.png', svg: 'https://flagcdn.com/li.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/pw.png', svg: 'https://flagcdn.com/pw.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/dj.png', svg: 'https://flagcdn.com/dj.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/vi.png', svg: 'https://flagcdn.com/vi.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bm.png', svg: 'https://flagcdn.com/bm.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/sk.png', svg: 'https://flagcdn.com/sk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/bd.png', svg: 'https://flagcdn.com/bd.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/dk.png', svg: 'https://flagcdn.com/dk.svg'}
+country.js:9 {png: 'https://flagcdn.com/w320/fm.png', svg: 'https://flagcdn.com/fm.svg'}
+
+
+
+
+
+3. Use the same rest countries and print all countries name,region,subregion and population?
+
+var  request=new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all");
+request.send();
+request.onload=function (){
+let countryData=JSON.parse(request.responseText);
+      for (let index=0; index<countryData.length;index++){ 
+         console.log(countryData[index].name.common);
+         console.log(countryData[index].region);
+         console.log(countryData[index].subregion);
+         console.log(countryData[index].population);
+
+}
+};
+
+OUTPUT:    
+country.js:10 Germany
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 83240525
+country.js:10 Morocco
+country.js:11 Africa
+country.js:12 Northern Africa
+country.js:13 36910558
+country.js:10 Belgium
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 11555997
+country.js:10 Cook Islands
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 18100
+country.js:10 Ecuador
+country.js:11 Americas
+country.js:12 South America
+country.js:13 17643060
+country.js:10 Saint Kitts and Nevis
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 53192
+country.js:10 Rwanda
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 12952209
+country.js:10 Guyana
+country.js:11 Americas
+country.js:12 South America
+country.js:13 786559
+country.js:10 Northern Mariana Islands
+country.js:11 Oceania
+country.js:12 Micronesia
+country.js:13 57557
+country.js:10 Botswana
+country.js:11 Africa
+country.js:12 Southern Africa
+country.js:13 2351625
+country.js:10 Bouvet Island
+country.js:11 Antarctic
+country.js:12 undefined
+country.js:13 0
+country.js:10 China
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 1402112000
+country.js:10 Grenada
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 112519
+country.js:10 Senegal
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 16743930
+country.js:10 Guam
+country.js:11 Oceania
+country.js:12 Micronesia
+country.js:13 168783
+country.js:10 Republic of the Congo
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 5657000
+country.js:10 Thailand
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 69799978
+country.js:10 Jordan
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 10203140
+country.js:10 Colombia
+country.js:11 Americas
+country.js:12 South America
+country.js:13 50882884
+country.js:10 Pitcairn Islands
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 56
+country.js:10 Norway
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 5379475
+country.js:10 Comoros
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 869595
+country.js:10 French Southern and Antarctic Lands
+country.js:11 Antarctic
+country.js:12 undefined
+country.js:13 400
+country.js:10 Cape Verde
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 555988
+country.js:10 Cyprus
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 1207361
+country.js:10 Kiribati
+country.js:11 Oceania
+country.js:12 Micronesia
+country.js:13 119446
+country.js:10 Central African Republic
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 4829764
+country.js:10 Caribbean Netherlands
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 25987
+country.js:10 Puerto Rico
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 3194034
+country.js:10 Cocos (Keeling) Islands
+country.js:11 Oceania
+country.js:12 Australia and New Zealand
+country.js:13 544
+country.js:10 Palestine
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 4803269
+country.js:10 Turkmenistan
+country.js:11 Asia
+country.js:12 Central Asia
+country.js:13 6031187
+country.js:10 British Indian Ocean Territory
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 3000
+country.js:10 Qatar
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 2881060
+country.js:10 Greenland
+country.js:11 Americas
+country.js:12 North America
+country.js:13 56367
+country.js:10 Romania
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 19286123
+country.js:10 Saint Helena, Ascension and Tristan da Cunha
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 53192
+country.js:10 Niue
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 1470
+country.js:10 India
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 1380004385
+country.js:10 Réunion
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 840974
+country.js:10 Uzbekistan
+country.js:11 Asia
+country.js:12 Central Asia
+country.js:13 34232050
+country.js:10 Armenia
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 2963234
+country.js:10 Kuwait
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 4270563
+country.js:10 Sint Maarten
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 40812
+country.js:10 Bulgaria
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 6927288
+country.js:10 Israel
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 9216900
+country.js:10 Uruguay
+country.js:11 Americas
+country.js:12 South America
+country.js:13 3473727
+country.js:10 Vanuatu
+country.js:11 Oceania
+country.js:12 Melanesia
+country.js:13 307150
+country.js:10 Vietnam
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 97338583
+country.js:10 American Samoa
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 55197
+country.js:10 Burkina Faso
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 20903278
+country.js:10 Panama
+country.js:11 Americas
+country.js:12 Central America
+country.js:13 4314768
+country.js:10 French Guiana
+country.js:11 Americas
+country.js:12 South America
+country.js:13 254541
+country.js:10 Iraq
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 40222503
+country.js:10 Taiwan
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 23503349
+country.js:10 Ivory Coast
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 26378275
+country.js:10 Sri Lanka
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 21919000
+country.js:10 Moldova
+country.js:11 Europe
+country.js:12 Eastern Europe
+country.js:13 2617820
+country.js:10 United Kingdom
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 67215293
+country.js:10 Greece
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 10715549
+country.js:10 São Tomé and Príncipe
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 219161
+country.js:10 Mali
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 20250834
+country.js:10 South Africa
+country.js:11 Africa
+country.js:12 Southern Africa
+country.js:13 59308690
+country.js:10 Iceland
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 366425
+country.js:10 South Korea
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 51780579
+country.js:10 Chile
+country.js:11 Americas
+country.js:12 South America
+country.js:13 19116209
+country.js:10 Mauritius
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 1265740
+country.js:10 Kosovo
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 1775378
+country.js:10 Slovenia
+country.js:11 Europe
+country.js:12 Central Europe
+country.js:13 2100126
+country.js:10 Czechia
+country.js:11 Europe
+country.js:12 Central Europe
+country.js:13 10698896
+country.js:10 San Marino
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 33938
+country.js:10 Belarus
+country.js:11 Europe
+country.js:12 Eastern Europe
+country.js:13 9398861
+country.js:10 Georgia
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 3714000
+country.js:10 Switzerland
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 8654622
+country.js:10 Cuba
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 11326616
+country.js:10 Norfolk Island
+country.js:11 Oceania
+country.js:12 Australia and New Zealand
+country.js:13 2302
+country.js:10 DR Congo
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 108407721
+country.js:10 Saint Martin
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 38659
+country.js:10 Sweden
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 10353442
+country.js:10 Hungary
+country.js:11 Europe
+country.js:12 Central Europe
+country.js:13 9749763
+country.js:10 Aruba
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 106766
+country.js:10 United Arab Emirates
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 9890400
+country.js:10 Montenegro
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 621718
+country.js:10 North Korea
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 25778815
+country.js:10 Tajikistan
+country.js:11 Asia
+country.js:12 Central Asia
+country.js:13 9537642
+country.js:10 Libya
+country.js:11 Africa
+country.js:12 Northern Africa
+country.js:13 6871287
+country.js:10 Yemen
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 29825968
+country.js:10 Netherlands
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 16655799
+country.js:10 Heard Island and McDonald Islands
+country.js:11 Antarctic
+country.js:12 undefined
+country.js:13 0
+country.js:10 New Caledonia
+country.js:11 Oceania
+country.js:12 Melanesia
+country.js:13 271960
+country.js:10 Kazakhstan
+country.js:11 Asia
+country.js:12 Central Asia
+country.js:13 18754440
+country.js:10 British Virgin Islands
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 30237
+country.js:10 Lebanon
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 6825442
+country.js:10 Nigeria
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 206139587
+country.js:10 Antigua and Barbuda
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 97928
+country.js:10 Poland
+country.js:11 Europe
+country.js:12 Central Europe
+country.js:13 37950802
+country.js:10 Bosnia and Herzegovina
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 3280815
+country.js:10 Australia
+country.js:11 Oceania
+country.js:12 Australia and New Zealand
+country.js:13 25687041
+country.js:10 Algeria
+country.js:11 Africa
+country.js:12 Northern Africa
+country.js:13 44700000
+country.js:10 Madagascar
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 27691019
+country.js:10 Trinidad and Tobago
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 1399491
+country.js:10 Suriname
+country.js:11 Americas
+country.js:12 South America
+country.js:13 586634
+country.js:10 Nepal
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 29136808
+country.js:10 Indonesia
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 273523621
+country.js:10 Azerbaijan
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 10110116
+country.js:10 Spain
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 47351567
+country.js:10 El Salvador
+country.js:11 Americas
+country.js:12 Central America
+country.js:13 6486201
+country.js:10 Hong Kong
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 7500700
+country.js:10 Tokelau
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 1411
+country.js:10 Marshall Islands
+country.js:11 Oceania
+country.js:12 Micronesia
+country.js:13 59194
+country.js:10 Russia
+country.js:11 Europe
+country.js:12 Eastern Europe
+country.js:13 144104080
+country.js:10 Saint Lucia
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 183629
+country.js:10 Tuvalu
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 11792
+country.js:10 Equatorial Guinea
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 1402985
+country.js:10 Malaysia
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 32365998
+country.js:10 Malawi
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 19129955
+country.js:10 Seychelles
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 98462
+country.js:10 Malta
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 525285
+country.js:10 Dominica
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 71991
+country.js:10 Oman
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 5106622
+country.js:10 Angola
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 32866268
+country.js:10 Portugal
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 10305564
+country.js:10 Cameroon
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 26545864
+country.js:10 Estonia
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 1331057
+country.js:10 Eritrea
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 5352000
+country.js:10 Mauritania
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 4649660
+country.js:10 Montserrat
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 4922
+country.js:10 Canada
+country.js:11 Americas
+country.js:12 North America
+country.js:13 38005238
+country.js:10 Luxembourg
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 632275
+country.js:10 Albania
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 2837743
+country.js:10 Saint Pierre and Miquelon
+country.js:11 Americas
+country.js:12 North America
+country.js:13 6069
+country.js:10 Mayotte
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 226915
+country.js:10 Fiji
+country.js:11 Oceania
+country.js:12 Melanesia
+country.js:13 896444
+country.js:10 Sierra Leone
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 7976985
+country.js:10 Turks and Caicos Islands
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 38718
+country.js:10 Curaçao
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 155014
+country.js:10 Ukraine
+country.js:11 Europe
+country.js:12 Eastern Europe
+country.js:13 44134693
+country.js:10 North Macedonia
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 2077132
+country.js:10 Andorra
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 77265
+country.js:10 Namibia
+country.js:11 Africa
+country.js:12 Southern Africa
+country.js:13 2540916
+country.js:10 Samoa
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 198410
+country.js:10 Syria
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 17500657
+country.js:10 Argentina
+country.js:11 Americas
+country.js:12 South America
+country.js:13 45376763
+country.js:10 Western Sahara
+country.js:11 Africa
+country.js:12 Northern Africa
+country.js:13 510713
+country.js:10 Mozambique
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 31255435
+country.js:10 Guinea
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 13132792
+country.js:10 Tunisia
+country.js:11 Africa
+country.js:12 Northern Africa
+country.js:13 11818618
+country.js:10 Falkland Islands
+country.js:11 Americas
+country.js:12 South America
+country.js:13 2563
+country.js:10 Lesotho
+country.js:11 Africa
+country.js:12 Southern Africa
+country.js:13 2142252
+country.js:10 Croatia
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 4047200
+country.js:10 Liberia
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 5057677
+country.js:10 Papua New Guinea
+country.js:11 Oceania
+country.js:12 Melanesia
+country.js:13 8947027
+country.js:10 Finland
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 5530719
+country.js:10 Antarctica
+country.js:11 Antarctic
+country.js:12 undefined
+country.js:13 1000
+country.js:10 Burundi
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 11890781
+country.js:10 Bolivia
+country.js:11 Americas
+country.js:12 South America
+country.js:13 11673029
+country.js:10 Togo
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 8278737
+country.js:10 Barbados
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 287371
+country.js:10 Gibraltar
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 33691
+country.js:10 Ethiopia
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 114963583
+country.js:10 Chad
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 16425859
+country.js:10 Gambia
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 2416664
+country.js:10 New Zealand
+country.js:11 Oceania
+country.js:12 Australia and New Zealand
+country.js:13 5084300
+country.js:10 United States Minor Outlying Islands
+country.js:11 Americas
+country.js:12 North America
+country.js:13 300
+country.js:10 Timor-Leste
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 1318442
+country.js:10 Turkey
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 84339067
+country.js:10 Cambodia
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 16718971
+country.js:10 Lithuania
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 2794700
+country.js:10 Sudan
+country.js:11 Africa
+country.js:12 Northern Africa
+country.js:13 43849269
+country.js:10 Anguilla
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 13452
+country.js:10 Italy
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 59554023
+country.js:10 Maldives
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 540542
+country.js:10 French Polynesia
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 280904
+country.js:10 Austria
+country.js:11 Europe
+country.js:12 Central Europe
+country.js:13 8917205
+country.js:10 Belize
+country.js:11 Americas
+country.js:12 Central America
+country.js:13 397621
+country.js:10 Kyrgyzstan
+country.js:11 Asia
+country.js:12 Central Asia
+country.js:13 6591600
+country.js:10 Laos
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 7275556
+country.js:10 Dominican Republic
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 10847904
+country.js:10 Honduras
+country.js:11 Americas
+country.js:12 Central America
+country.js:13 9904608
+country.js:10 Eswatini
+country.js:11 Africa
+country.js:12 Southern Africa
+country.js:13 1160164
+country.js:10 Guinea-Bissau
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 1967998
+country.js:10 Niger
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 24206636
+country.js:10 Peru
+country.js:11 Americas
+country.js:12 South America
+country.js:13 32971846
+country.js:10 Bahrain
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 1701583
+country.js:10 Saint Barthélemy
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 4255
+country.js:10 Brunei
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 437483
+country.js:10 Cayman Islands
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 65720
+country.js:10 Paraguay
+country.js:11 Americas
+country.js:12 South America
+country.js:13 7132530
+country.js:10 Benin
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 12123198
+country.js:10 Iran
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 83992953
+country.js:10 Macau
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 649342
+country.js:10 Mexico
+country.js:11 Americas
+country.js:12 North America
+country.js:13 128932753
+country.js:10 Jersey
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 100800
+country.js:10 Somalia
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 15893219
+country.js:10 Latvia
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 1901548
+country.js:10 Tanzania
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 59734213
+country.js:10 Venezuela
+country.js:11 Americas
+country.js:12 South America
+country.js:13 28435943
+country.js:10 Mongolia
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 3278292
+country.js:10 Costa Rica
+country.js:11 Americas
+country.js:12 Central America
+country.js:13 5094114
+country.js:10 Tonga
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 105697
+country.js:10 Brazil
+country.js:11 Americas
+country.js:12 South America
+country.js:13 212559409
+country.js:10 Zimbabwe
+country.js:11 Africa
+country.js:12 Southern Africa
+country.js:13 14862927
+country.js:10 Bhutan
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 771612
+country.js:10 Kenya
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 53771300
+country.js:10 Saint Vincent and the Grenadines
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 110947
+country.js:10 Åland Islands
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 29458
+country.js:10 Isle of Man
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 85032
+country.js:10 Ireland
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 4994724
+country.js:10 Haiti
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 11402533
+country.js:10 Myanmar
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 54409794
+country.js:10 Guadeloupe
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 400132
+country.js:10 Jamaica
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 2961161
+country.js:10 Bahamas
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 393248
+country.js:10 France
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 67391582
+country.js:10 Singapore
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 5685807
+country.js:10 Wallis and Futuna
+country.js:11 Oceania
+country.js:12 Polynesia
+country.js:13 11750
+country.js:10 Faroe Islands
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 48865
+country.js:10 Afghanistan
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 40218234
+country.js:10 Svalbard and Jan Mayen
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 2562
+country.js:10 South Sudan
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 11193729
+country.js:10 Serbia
+country.js:11 Europe
+country.js:12 Southeast Europe
+country.js:13 6908224
+country.js:10 Vatican City
+country.js:11 Europe
+country.js:12 Southern Europe
+country.js:13 451
+country.js:10 Nicaragua
+country.js:11 Americas
+country.js:12 Central America
+country.js:13 6624554
+country.js:10 Uganda
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 45741000
+country.js:10 United States
+country.js:11 Americas
+country.js:12 North America
+country.js:13 329484123
+country.js:10 Egypt
+country.js:11 Africa
+country.js:12 Northern Africa
+country.js:13 102334403
+country.js:10 Martinique
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 378243
+country.js:10 Philippines
+country.js:11 Asia
+country.js:12 South-Eastern Asia
+country.js:13 109581085
+country.js:10 South Georgia
+country.js:11 Antarctic
+country.js:12 undefined
+country.js:13 30
+country.js:10 Zambia
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 18383956
+country.js:10 Solomon Islands
+country.js:11 Oceania
+country.js:12 Melanesia
+country.js:13 686878
+country.js:10 Ghana
+country.js:11 Africa
+country.js:12 Western Africa
+country.js:13 31072945
+country.js:10 Gabon
+country.js:11 Africa
+country.js:12 Middle Africa
+country.js:13 2225728
+country.js:10 Pakistan
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 220892331
+country.js:10 Saudi Arabia
+country.js:11 Asia
+country.js:12 Western Asia
+country.js:13 34813867
+country.js:10 Guernsey
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 62999
+country.js:10 Guatemala
+country.js:11 Americas
+country.js:12 Central America
+country.js:13 16858333
+country.js:10 Nauru
+country.js:11 Oceania
+country.js:12 Micronesia
+country.js:13 10834
+country.js:10 Monaco
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 39244
+country.js:10 Christmas Island
+country.js:11 Oceania
+country.js:12 Australia and New Zealand
+country.js:13 2072
+country.js:10 Japan
+country.js:11 Asia
+country.js:12 Eastern Asia
+country.js:13 125836021
+country.js:10 Liechtenstein
+country.js:11 Europe
+country.js:12 Western Europe
+country.js:13 38137
+country.js:10 Palau
+country.js:11 Oceania
+country.js:12 Micronesia
+country.js:13 18092
+country.js:10 Djibouti
+country.js:11 Africa
+country.js:12 Eastern Africa
+country.js:13 988002
+country.js:10 United States Virgin Islands
+country.js:11 Americas
+country.js:12 Caribbean
+country.js:13 106290
+country.js:10 Bermuda
+country.js:11 Americas
+country.js:12 North America
+country.js:13 63903
+country.js:10 Slovakia
+country.js:11 Europe
+country.js:12 Central Europe
+country.js:13 5458827
+country.js:10 Bangladesh
+country.js:11 Asia
+country.js:12 Southern Asia
+country.js:13 164689383
+country.js:10 Denmark
+country.js:11 Europe
+country.js:12 Northern Europe
+country.js:13 5831404
+country.js:10 Micronesia
+country.js:11 Oceania
+country.js:12 Micronesia
+country.js:13 115021
+
+
+
